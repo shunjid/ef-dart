@@ -5,7 +5,7 @@ class farmer {
   String farmerLocation;
   int farmerAge;
   double farmerMonthlyIncome;
-  foodCrops fc;
+  foodCrops _crops;
 
-  farmer(this.farmerId, this.farmerLocation, this.farmerAge, this.farmerMonthlyIncome, this.fc);
+  farmer(this.farmerId, this.farmerLocation, this.farmerAge, this.farmerMonthlyIncome, this._crops);
 }
