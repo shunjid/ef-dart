@@ -2,18 +2,7 @@ import 'dart:io';
 import '../models/farmer.dart';
 import '../models/foodCrops.dart';
 
-class FarmersController {
-  static List<farmer> _farmers;
-  static List<foodCrops> _foodCrops;
-
-  FarmersController(File cropsDataSet, File farmersDataSet) {
-    _foodCrops = retrieveCrops(cropsDataSet);
-    _farmers   = retrieveFarmers(farmersDataSet);
-
-    print(_foodCrops.length);
-    print(_farmers.length);
-  }
-
+class SerializeDataset {
   List<foodCrops> retrieveCrops(File cropsDataSet) {
     try {
       List<String> linesOfCSV = cropsDataSet.readAsLinesSync();
@@ -28,7 +17,7 @@ class FarmersController {
     }
   }
 
-  List<farmer> retrieveFarmers(File farmersDataSet) {
+  List<farmer> retrieveFarmers(File farmersDataSet, List<foodCrops> _foodCrops) {
     try {
       List<String> linesOfCSV = farmersDataSet.readAsLinesSync();
       linesOfCSV.removeAt(0);
@@ -54,5 +43,4 @@ class FarmersController {
       return null;
     }
   }
-
 }

@@ -1,6 +1,5 @@
-import 'dart:io';
-import 'api/FarmersController.dart';
+import 'api/FarmersContext.dart';
 
 void main(List<String> args) async {
-  var farmer = FarmersController(new File('data/foodCrops.csv'), new File('data/farmer.csv'));
+  var _context = new FarmersContext();
 }
