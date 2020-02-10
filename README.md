@@ -5,13 +5,13 @@ A sample command-line application which is what I started my journey with dart. 
 I thought it would be wise if I solve problems keeping in mind the concepts I have experienced in Entity Framework Core (EF Core).
 
 ## Table of contents
-- [Where](#where---where-with-range)
-- [FirstOrDefault](#firstordefault---singleordefault)
+- [Where](#where)
+- [FirstOrDefault](#firstordefault)
 - [ForEach](#foreach)
-- [Select](#select---select-anonymous-types)
+- [Select](#select)
 - [More Coming Soon ..](#ef-dart)
 
-### where - where with range
+### Where
 **Problem:** Find the farmers by passing 'location' as parameter
 ```dart
 String findByLocation(String location) {
@@ -31,7 +31,7 @@ String findByEarningRange(double lowerRange, double upperRange) {
 ``` 
 
 
-### FirstOrDefault - SingleOrDefault
+### FirstOrDefault
 **Problem:** Find the farmers who grows the crop ${cropName}
 ```dart
 String findByCrops(String cropName) {
@@ -44,7 +44,7 @@ String findByCrops(String cropName) {
 }
 ``` 
 
-### forEach
+### ForEach
 **Problem:** Find the farmers Ids who grow crops of type ${cropType}
 ```dart
 List<dynamic> findByCropType(String cropType) {
@@ -68,7 +68,7 @@ String updateMonthlyIncomeWhoGrows(String cropName, double increaseTimes) {
 }
 ``` 
 
-### Select - Select Anonymous Types
+### Select
 **Problem:** Find all farmers within given range of age and return as array 
 ```sql
 Select farmerAge from _farmers
