@@ -18,7 +18,16 @@ class initials extends receiver {
 
   String farmByLocation(String location) {
       return jsonEncode(farm(_farmers.where((d) =>
-             d.farmerLocation == StringUtils.capitalize(location)).toList())
+             d.farmerLocation == StringUtils.capitalize(location.trim())).toList())
       .toJson());
+  }
+
+  String farmByCrops(String cropName) {
+    var crop = _foodCrops.firstWhere((cr) => cr.cropName == cropName.toLowerCase().trim(), orElse: null);
+    var message = "";
+    crop == null ? message = "Crop named ${cropName} not found" :
+                             message = jsonEncode(farm(_farmers.where((f) =>
+                             f.crops == crop).toList()).toJson());
+    return message;
   }
 }
