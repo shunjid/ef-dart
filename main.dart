@@ -10,9 +10,9 @@ void main(List<String> args) {
   // print(farm.increaseAgesRetrieveAsArray(15, 20));
   // print(farm.farmerGrowingAgeRangeDistinct(15, 18));
 
-  var cropIncomeCustomObject = farm.filterKeysInsideArrayOfObjects(20000);
+  /*var cropIncomeCustomObject = farm.filterKeysInsideArrayOfObjects(20000);
 
   cropIncomeCustomObject.forEach((ic) =>
     print('{income : ${ic['income']}, grows : ${ic['grows']}}')
-  );
+  );*/
 }
