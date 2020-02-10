@@ -5,6 +5,7 @@ class farm {
   farm(this.farmers);
 
   Map<String, dynamic> toJson() => _farmToJson(this);
+  factory farm.fromJson(Map<String, dynamic> json) => _farmFromJson(json);
 }
 
 Map<String, dynamic> _farmToJson(farm f) {
@@ -14,4 +15,12 @@ Map<String, dynamic> _farmToJson(farm f) {
   return <String, dynamic> {
     'farmers' : farmers
   };
+}
+
+farm _farmFromJson(Map<String, dynamic> json) {
+  var _farmersJson = json['farmers'] as List;
+  List<farmer> _farmers = _farmersJson != null ?
+                        _farmersJson.map((f) => farmer.fromJson(f)).toList() : null;
+
+  return farm(_farmers);
 }

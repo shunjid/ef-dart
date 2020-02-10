@@ -49,5 +49,17 @@ I thought it would be wise if I solve problems keeping in mind the concepts I ha
     }
 ``` 
 
+**Problem:** Update monthly income of farmers who grows crop ${cropName} to ${increaseTimes} time of previous
+```dart
+    String updateMonthlyIncomeWhoGrows(String cropName, double increaseTimes) {
+        var aFarm = farm.fromJson(jsonDecode(findByCrops(cropName)));
+    
+        aFarm.farmers.forEach((farmer aFarmer){
+          aFarmer.farmerMonthlyIncome *= increaseTimes;
+        });
+        return jsonEncode(aFarm.toJson());
+    }
+``` 
+
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).

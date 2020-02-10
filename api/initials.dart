@@ -39,9 +39,18 @@ class initials extends receiver {
 
   List<dynamic> findByCropType(String cropType) {
     var farmerIds = [];
-    var findFarmerByCropType = _farmers.forEach((farmer aFarmer){
+    _farmers.forEach((farmer aFarmer){
       aFarmer.crops.cropType == cropType ? farmerIds.add(aFarmer.farmerId) : null;
     });
     return farmerIds;
+  }
+
+  String updateMonthlyIncomeWhoGrows(String cropName, double increaseTimes){
+    var aFarm = farm.fromJson(jsonDecode(findByCrops(cropName)));
+
+    aFarm.farmers.forEach((farmer aFarmer){
+      aFarmer.farmerMonthlyIncome *= increaseTimes;
+    });
+    return jsonEncode(aFarm.toJson());
   }
 }
