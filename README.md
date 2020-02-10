@@ -4,6 +4,12 @@
 A sample command-line application which is what I started my journey with dart. Being a .NET Core developer,
 I thought it would be wise if I solve problems keeping in mind the concepts I have experienced in Entity Framework Core (EF Core).
 
+## Table of contents
+- [Where](#where---where-with-range)
+- [FirstOrDefault](#firstordefault---singleordefault)
+- [ForEach](#foreach)
+- [Select](#select---select-anonymous-types)
+- [More Coming Soon ..](#ef-dart)
 
 ### where - where with range
 **Problem:** Find the farmers by passing 'location' as parameter
