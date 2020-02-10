@@ -5,4 +5,5 @@ void main(List<String> args) {
   // print(farm.findByLocation("dhaka"));
   // print(farm.findByCrops("rice"));
   // print(farm.findByEarningRange(10000, 15000));
+  // print(farm.findByCropType('horticulture'));
 }

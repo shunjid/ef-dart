@@ -36,4 +36,12 @@ class initials extends receiver {
         d.farmerMonthlyIncome >= lowerRange && d.farmerMonthlyIncome <= upperRange).toList())
         .toJson());
   }
+
+  List<dynamic> findByCropType(String cropType) {
+    var farmerIds = [];
+    var findFarmerByCropType = _farmers.forEach((farmer aFarmer){
+      aFarmer.crops.cropType == cropType ? farmerIds.add(aFarmer.farmerId) : null;
+    });
+    return farmerIds;
+  }
 }
