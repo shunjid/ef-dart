@@ -53,4 +53,15 @@ class initials extends receiver {
     });
     return jsonEncode(aFarm.toJson());
   }
+
+  List<int> increaseAgesRetrieveAsArray(int lowerLimit, int upperLimit) {
+    /*
+    ** Method cascade : ..sort
+    ** ref : https://news.dartlang.org/2012/02/method-cascades-in-dart-posted-by-gilad.html
+     */
+
+    return _farmers
+           .where((f) => f.farmerAge >= lowerLimit && f.farmerAge <= upperLimit)
+           .map((f) => f.farmerAge + 1).toList()..sort();
+  }
 }

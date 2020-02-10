@@ -61,5 +61,20 @@ I thought it would be wise if I solve problems keeping in mind the concepts I ha
     }
 ``` 
 
+### Select
+**Problem:** Find all farmers within given range of age and return as array 
+```roomsql
+    Select farmerAge from _farmers
+    where farmerAge >= lowerRange AND farmerAge <= upperRange 
+    ORDER BY farmerAge ASC;
+``` 
+```dart
+    List<int> increaseAgesRetrieveAsArray(int lowerLimit, int upperLimit) {
+        return _farmers
+               .where((f) => f.farmerAge >= lowerLimit && f.farmerAge <= upperLimit)
+               .map((f) => f.farmerAge + 1).toList()..sort();
+    }
+``` 
+
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
