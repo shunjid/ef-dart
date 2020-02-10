@@ -4,7 +4,35 @@ A sample command-line application which is what I started my journey with dart. 
 I thought it would be wise if I solve problems keeping in mind the concepts I have experienced in Entity Framework Core (EF Core).
 
 
-###  
+### where - where with range
+**Problem:** Find the farmers by passing 'location' as parameter
+```dart
+    String findByLocation(String location) {
+          return jsonEncode(farm(_farmers.where((d) =>
+                 d.farmerLocation == StringUtils.capitalize(location.trim())).toList())
+          .toJson());
+    }
+``` 
+
+**Problem:** Find the farmers who (earn <= ${lowerRange} and earn >=${upperRange})
+```dart
+    String findByEarningRange(double lowerRange, double upperRange) {
+        return jsonEncode(farm(_farmers.where((d) =>
+            d.farmerMonthlyIncome >= lowerRange && d.farmerMonthlyIncome <= upperRange).toList())
+            .toJson());
+    }
+``` 
+
+
+### FirstOrDefault - SingleOrDefault
+**Problem:** Find the farmers who grows the crop ${cropName}
+```dart
+    String findByLocation(String location) {
+          return jsonEncode(farm(_farmers.where((d) =>
+                 d.farmerLocation == StringUtils.capitalize(location.trim())).toList())
+          .toJson());
+    }
+``` 
 
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
