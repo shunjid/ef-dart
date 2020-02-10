@@ -63,7 +63,7 @@ I thought it would be wise if I solve problems keeping in mind the concepts I ha
 
 ### Select
 **Problem:** Find all farmers within given range of age and return as array 
-```roomsql
+```sql
     Select farmerAge from _farmers
     where farmerAge >= lowerRange AND farmerAge <= upperRange 
     ORDER BY farmerAge ASC;
@@ -73,6 +73,18 @@ I thought it would be wise if I solve problems keeping in mind the concepts I ha
         return _farmers
                .where((f) => f.farmerAge >= lowerLimit && f.farmerAge <= upperLimit)
                .map((f) => f.farmerAge + 1).toList()..sort();
+    }
+``` 
+
+**Problem:** Find all farmers within given range of age and return what they grow as array with no duplicate
+```dart
+    List<String> farmerGrowingAgeRangeDistinct(int lowerLimit, int upperLimit) {
+        return _farmers
+            .where((f) => f.farmerAge >= lowerLimit && f.farmerAge <= upperLimit)
+            .map((f) => f.crops.cropName)
+            .toSet()
+            .toList()
+            ..sort();
     }
 ``` 
 

@@ -64,4 +64,13 @@ class initials extends receiver {
            .where((f) => f.farmerAge >= lowerLimit && f.farmerAge <= upperLimit)
            .map((f) => f.farmerAge + 1).toList()..sort();
   }
+
+  List<String> farmerGrowingAgeRangeDistinct(int lowerLimit, int upperLimit) {
+    return _farmers
+        .where((f) => f.farmerAge >= lowerLimit && f.farmerAge <= upperLimit)
+        .map((f) => f.crops.cropName)
+        .toSet()
+        .toList()
+        ..sort();
+  }
 }

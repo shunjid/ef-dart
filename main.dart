@@ -7,5 +7,6 @@ void main(List<String> args) {
   // print(farm.findByEarningRange(10000, 15000));
   // print(farm.findByCropType('horticulture'));
   // print(farm.updateMonthlyIncomeWhoGrows("rice", 2));
-  print(farm.increaseAgesRetrieveAsArray(15, 20));
+  // print(farm.increaseAgesRetrieveAsArray(15, 20));
+  // print(farm.farmerGrowingAgeRangeDistinct(15, 18));
 }
