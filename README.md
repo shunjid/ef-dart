@@ -61,7 +61,7 @@ I thought it would be wise if I solve problems keeping in mind the concepts I ha
     }
 ``` 
 
-### Select
+### Select - Select Anonymous Types
 **Problem:** Find all farmers within given range of age and return as array 
 ```sql
     Select farmerAge from _farmers
@@ -87,6 +87,27 @@ I thought it would be wise if I solve problems keeping in mind the concepts I ha
             ..sort();
     }
 ``` 
+
+**Problem:** Find all farmers within given range of incomeLimit and return their income and what they grow in a list of custom object
+```dart
+    List<Map<String, dynamic>> filterKeysInsideArrayOfObjects(double incomeLimit) {
+        return _farmers
+               .where((f) => f.farmerMonthlyIncome <= incomeLimit)
+               .map((f) => {
+                 'income' : f.farmerMonthlyIncome,
+                 'grows' : f.crops.cropName
+               })
+               .toList();
+    }
+    
+    void main() {
+        var cropIncomeCustomObject = farm.filterKeysInsideArrayOfObjects(20000);
+        
+        cropIncomeCustomObject.forEach((ic) =>
+            print('{income : ${ic['income']}, grows : ${ic['grows']}}')
+        );
+    }
+```
 
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).

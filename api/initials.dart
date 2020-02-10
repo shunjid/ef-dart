@@ -73,4 +73,14 @@ class initials extends receiver {
         .toList()
         ..sort();
   }
+
+  List<Map<String, dynamic>> filterKeysInsideArrayOfObjects(double incomeLimit) {
+    return _farmers
+           .where((f) => f.farmerMonthlyIncome <= incomeLimit)
+           .map((f) => {
+             'income' : f.farmerMonthlyIncome,
+             'grows' : f.crops.cropName
+           })
+           .toList();
+  }
 }
