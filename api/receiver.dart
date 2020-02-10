@@ -2,7 +2,7 @@ import 'dart:io';
 import '../models/farmer.dart';
 import '../models/foodCrops.dart';
 
-class SerializeDataset {
+class receiver {
   List<foodCrops> retrieveCrops(File cropsDataSet) {
     try {
       List<String> linesOfCSV = cropsDataSet.readAsLinesSync();
@@ -30,11 +30,11 @@ class SerializeDataset {
 
         listOfFarmers.add (
             farmer (
-            int.parse(eachElements[0]),
-            eachElements[1],
-            int.parse(eachElements[2]),
-            double.parse(eachElements[3]),
-            _foodCrops[cropNumber - 1])
+                int.parse(eachElements[0]),
+                eachElements[1],
+                int.parse(eachElements[2]),
+                double.parse(eachElements[3]),
+                _foodCrops[cropNumber - 1])
         );
       }
 

@@ -1,6 +1,6 @@
-import 'api/FarmersContext.dart';
+import 'api/initials.dart';
 
-void main(List<String> args) async {
-  var _context = new FarmersContext();
-  print(_context.getFarmersLivingIn("Dhaka"));
+void main(List<String> args) {
+  var farmContext = initials();
+  print(farmContext.farmByLocation("janina"));
 }

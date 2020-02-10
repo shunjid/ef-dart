@@ -16,5 +16,5 @@ Map<String, dynamic> _farmerToJson(farmer f) => <String, dynamic> {
     'farmerLocation' : f.farmerLocation,
     'farmerAge' : f.farmerAge,
     'farmerMonthlyIncome' : f.farmerMonthlyIncome,
-    'crops' : f.crops
+    'crops' : f.crops.toJson()
 };
